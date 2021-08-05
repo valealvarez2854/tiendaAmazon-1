@@ -31,7 +31,13 @@
                 </ul>
 
                 <form class="mx-auto w-75">
-                  <input class="form-control me-2" type="search" aria-label="Search">
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">Todo</span>
+                    <input type="text" class="form-control mx-auto w-20">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                  </div>
+
                 </form>
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -41,8 +47,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Devoluciones y Pedidos</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-shopping-cart fa-2x"></i>Carrito</a>
+                        <a class="nav-link active position-relative" aria-current="page" href="#exampleModal" data-bs-toggle="modal">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                            <span class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-info invisible" id="pildora">
+                            </span>
+                        </a>
                     </li>
                 </ul>
 
@@ -97,7 +108,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" id="cantidad">Cantidad</label>
+                            <label class="form-label">Cantidad</label>
                             <input type="number" class="form-control" id="cantidad" value="1">
                         </div>
 
@@ -122,8 +133,44 @@
 
 
     </main>
-    
 
+    <section>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+
+                    <img src="https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/fotoCarrito.PNG?raw=true" alt="fotocarrito" class="img-fluid" id="fotoCarrito">
+
+                  </div>
+                  <div class="col-6">
+
+                    <h5 id="tituloCarrito">Tu Carrito de Amazon está vacío</h5>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    
+    <script src="controlador.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7b642ec699.js" crossorigin="anonymous"></script>
 </body>
