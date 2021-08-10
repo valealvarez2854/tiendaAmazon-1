@@ -34,7 +34,18 @@ function capturarDatos(){
 
     let tituloCarrito=document.getElementById("tituloCarrito");
     tituloCarrito.textContent=nombreConsola;
-   
+
+    let precioIndividual=document.getElementById("precioUnitarioCarrito");
+    precioIndividual.textContent=`Costo unitario: $${precioConsola} USD`;
+
+    let pesoIndividual=document.getElementById("pesoUnitarioCarrito");
+    pesoIndividual.textContent=`Peso unitario: ${pesoConsola} Lb`;
+
+    let pesoTotal=document.getElementById("pesoTotalCarrito");
+    pesoTotal.textContent=`Peso Total del envio: ${pesoConsola*cantidad}Lb`;
+    
+    let costoCasillero=document.getElementById("costoCasillero");
+    costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoConsola,cantidad)} USD`;
     
 
 
@@ -81,4 +92,23 @@ function seleccionarConsola(opcion){
     }
 
 
+}
+
+function calcularCostoCasillero(pesoConsola,cantidad){
+
+    let costoCasillero=0;
+    let pesoTotalEnvio=pesoConsola*cantidad;
+
+    if(pesoTotalEnvio<=20){
+
+        costoCasillero=85;
+
+    }else{ 
+
+        let pesoExtra=pesoTotalEnvio-20;
+        costoCasillero=85+(pesoExtra*2);
+
+    }
+    
+    return costoCasillero;
 }
