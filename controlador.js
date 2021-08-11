@@ -6,9 +6,10 @@ let fotoConsola;
 
 //1. Controlar con JS el boton del formulario
 let boton=document.getElementById("boton");
+let botonLimpiar=document.getElementById("botonLimpiar");
 
 //2. Detectar el clic en el boton
-boton.addEventListener("click",capturarDatos); 
+botonLimpiar.addEventListener("click",limpiarCarrito);
 
 //3. Crear funcion PROPIA que se llamo en el punto 2
 function capturarDatos(){
@@ -47,6 +48,11 @@ function capturarDatos(){
     let costoCasillero=document.getElementById("costoCasillero");
     costoCasillero.textContent=`Costo Casillero: $${calcularCostoCasillero(pesoConsola,cantidad)} USD`;
     
+    let costoImpuestos=document.getElementById("costoImpuestos");
+    costoImpuestos.textContent=`Costo venta(impuestos):$${calcularCostoImpuestos(precioConsola,cantidad)}`;
+
+    let costoTotal=document.getElementById("costoTotal");
+    costoTotal.textContent=`Costo Total: $${(calcularCostoCasillero(pesoConsola,cantidad))+(calcularCostoImpuestos(precioConsola,cantidad))} USD`;
 
 
 }
@@ -111,4 +117,23 @@ function calcularCostoCasillero(pesoConsola,cantidad){
     }
     
     return costoCasillero;
+}
+
+function calcularCostoImpuestos(costoConsola,cantidad){
+
+    const IMPUESTO_PAIS=114;
+    const VALOR_SEGURO=7;
+
+    let costoCompra=costoConsola*cantidad;
+    let costoTotal=costoCompra+IMPUESTO_PAIS+VALOR_SEGURO;
+
+    return costoTotal;
+
+} 
+
+
+function limpiarCarrito(){
+
+    console.log("hiciste clic en limpiar");
+
 }

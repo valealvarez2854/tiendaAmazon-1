@@ -139,7 +139,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Resumen de compra</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -149,6 +149,11 @@
 
                     <img src="https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/fotoCarrito.PNG?raw=true" alt="fotocarrito" class="img-fluid" id="fotoCarrito">
 
+                    <hr>
+                    <p id="pesoTotalCarrito"></p>
+                    <p id="costoCasillero" class="fw-bold"></p>
+
+
                   </div>
                   <div class="col-6">
 
@@ -157,17 +162,20 @@
                     <p id="pesoUnitarioCarrito"></p>
 
                     <hr>
+                    <p id="costoImpuestos" class="fw-bold"></p>
+                    <h5 id="costoTotal" class="text-success fw-bold"></h5>
 
-                    <p id="pesoTotalCarrito"></p>
-                    <h5 id="costoCasillero" class="text-success fw-bold"></h5>
+
+
+                    
 
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-warning" id="botonLimpiar">Limpiar<i class="ms-2 fas fa-trash-alt"></i></button>
+              <button type="button" class="btn btn-dark">Comprar</button>
             </div>
           </div>
         </div>
