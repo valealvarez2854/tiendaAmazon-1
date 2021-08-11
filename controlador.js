@@ -4,6 +4,7 @@ let precioConsola;
 let pesoConsola;
 let fotoConsola;
 
+
 //1. Controlar con JS el boton del formulario
 let boton=document.getElementById("boton");
 let botonLimpiar=document.getElementById("botonLimpiar");
@@ -136,5 +137,8 @@ function calcularCostoImpuestos(costoConsola,cantidad){
 function limpiarCarrito(){
 
     console.log("hiciste clic en limpiar");
+    let fotoCarrito=document.getElementById("fotoCarrito");
+    fotoCarrito.src="https://github.com/jjosegallegocesde/imagenes-amazon/blob/main/img/fotoCarrito.PNG?raw=true";
+
 
 }
