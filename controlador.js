@@ -9,6 +9,7 @@ let boton=document.getElementById("boton");
 let botonLimpiar=document.getElementById("botonLimpiar");
 
 //2. Detectar el clic en el boton
+boton.addEventListener("click",capturarDatos);
 botonLimpiar.addEventListener("click",limpiarCarrito);
 
 //3. Crear funcion PROPIA que se llamo en el punto 2
